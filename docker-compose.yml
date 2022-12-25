@@ -1,0 +1,49 @@
+---
+version: '3.9'
+
+services:
+
+  postgres:
+    container_name: nodejs-monorepo-postgres
+    image: postgres:13
+    restart: unless-stopped
+    ports:
+      - 5432:5432
+    volumes:
+      - ./config/postgres:/docker-entrypoint-initdb.d
+      - postgres:/var/lib/postgresql/data
+    environment:
+      POSTGRES_MULTIPLE_DATABASES: service_database, strapi
+      POSTGRES_USER: db_user
+      POSTGRES_PASSWORD: db_pass
+    networks:
+      - internal
+    stdin_open: true
+    tty: true
+
+  turbo:
+    container_name: turbo
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: on-failure
+    ports:
+      - 3000:3000
+      - 1337:1337
+    volumes:
+      - ./:/app
+    depends_on:
+      - postgres
+    networks:
+      - internal
+    stdin_open: true
+    tty: true
+
+volumes:
+  postgres:
+    name: strapi-db
+
+networks:
+  internal:
+    name: Internal
+    driver: bridge

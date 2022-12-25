@@ -1,0 +1,19 @@
+@use 'variables' as *;
+
+/// Calculate Z-Indexes by defined specificity z
+///
+/// @requires an array of z-indexes
+///
+/// @example @use "styles/config/functions"as *;
+///
+/// .modal {
+///  z-index: z("modal");
+///  }
+///
+@function z($layer) {
+	@if not map-has-key($z-layers, $layer) {
+		@warn "No layer found for `#{$layer}` in $z-layers map. Property omitted.";
+	}
+
+	@return map-get($z-layers, $layer);
+}

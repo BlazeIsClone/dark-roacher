@@ -1,0 +1,31 @@
+{
+	"name": "strapi",
+	"private": true,
+	"version": "1.0.0",
+	"scripts": {
+		"dev": "strapi develop",
+		"start": "strapi start",
+		"build": "strapi build",
+		"strapi": "strapi",
+		"test": "echo \"Warning: no test specified\" && exit 0"
+	},
+	"dependencies": {
+		"@strapi/plugin-i18n": "4.4.7",
+		"@strapi/plugin-users-permissions": "4.4.7",
+		"@strapi/strapi": "4.4.7",
+		"lodash": "^4.17.21",
+		"pg": "8.6.0",
+		"react-select": "^5.6.0"
+	},
+	"strapi": {
+		"uuid": "fe1eccac-7401-4855-9177-5485538ab71a"
+	},
+	"engines": {
+		"node": ">=14.19.1 <=18.x.x",
+		"npm": ">=6.0.0"
+	},
+	"devDependencies": {
+		"@rushstack/ts-command-line": "^4.13.1",
+		"@strapi/typescript-utils": "^4.5.0"
+	}
+}

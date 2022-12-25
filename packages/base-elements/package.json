@@ -1,0 +1,18 @@
+{
+	"name": "base-elements",
+	"version": "0.0.0",
+	"main": "./index.ts",
+	"types": "./index.ts",
+	"devDependencies": {
+		"@types/react": "^17.0.37",
+		"@types/react-dom": "^17.0.11",
+		"sass": "^1.56.1",
+		"tsconfig": "*",
+		"typescript": "^4.5.3",
+		"typescript-plugin-css-modules": "^3.4.0"
+	},
+	"peerDependencies": {
+		"react": "^18.0.0",
+		"react-dom": "^18.0.0"
+	}
+}

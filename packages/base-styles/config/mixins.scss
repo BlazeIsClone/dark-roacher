@@ -1,0 +1,85 @@
+@use 'variables.scss' as var;
+
+///  Used for media queries.
+///
+///  Add these mixins in your normal scss flow.
+///
+///  @use '@styles/config/mixins' as *;
+///
+///   .container{
+///       width:1024px;
+///
+///       @include smScreen{
+///           width:90%;
+///       }
+///   }
+
+@mixin xsScreen {
+	@media (max-width: #{var.$screen-sm}) {
+		@content;
+	}
+}
+
+@mixin smScreen {
+	@media (min-width: #{var.$screen-sm}) and (max-width: #{var.$screen-md}) {
+		@content;
+	}
+}
+
+@mixin mdScreen {
+	@media (min-width: #{var.$screen-md}) and (max-width: #{var.$screen-lg}) {
+		@content;
+	}
+}
+
+@mixin lgScreen {
+	@media (min-width: #{var.$screen-lg}) and (max-width:#{var.$screen-xl}) {
+		@content;
+	}
+}
+
+@mixin xlScreen {
+	@media (min-width: #{var.$screen-xl}) {
+		@content;
+	}
+}
+
+@mixin customMinBreakPoint($size) {
+	@media (min-width: #{$size 'px'}) {
+		@content;
+	}
+}
+
+@mixin customMaxBreakPoint($size) {
+	@media (max-width: #{$size 'px'}) {
+		@content;
+	}
+}
+
+/// Mixin to customize scrollbars
+///
+/// @param {Length} $size - Horizontal scrollbar's height and vertical scrollbar's width
+/// @param {Color} $foreground-color - Scrollbar's color
+/// @param {Color} $background-color [mix($primary, white, 75%)] - Scrollbar's color
+///
+/// @example scrollbarsChrome(0.5em, slategray);
+
+@mixin scrollbarsChrome($size, $foreground-color) {
+	::-webkit-scrollbar {
+		width: $size;
+		height: $size;
+	}
+
+	::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+		border-radius: 10px;
+	}
+
+	::-webkit-scrollbar-track {
+		background: rgba(0, 0, 0, 0);
+	}
+
+	body {
+		overflow: overlay;
+	}
+}

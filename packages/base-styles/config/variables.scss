@@ -1,0 +1,75 @@
+//---- Base Colors
+
+$primary-color: #646cffaa;
+$secondary-color: black;
+$primary-nutral-color: grey;
+
+$primary-color-variant: hsla(39, 100%, 50%, 0.4);
+$secondary-color-variant: #257d91;
+
+$primary-nutral-color-variant: #5d5d5d;
+$secondary-nutral-color-variant: #838383;
+
+//---- Surface Colors
+
+$background-color: rgb(13, 13, 13);
+$secondary-background-color: #222222;
+$surface-color: rgb(42, 42, 42);
+$secondary-surface-color: #ebeef3;
+
+//---- On Colors
+
+$on-primary-color: white;
+$on-secondary-color: white;
+
+$on-background-color: #fff;
+$on-surface-color: #000;
+
+$on-error-color: white;
+
+//---- Semantic Colors
+
+$sucess-color: green;
+$safe-color: lightblue;
+
+$error-color: red;
+$warning-color: #ffbb00;
+
+// Misc
+
+$blur-color: #090f1880;
+$blur-border: #ffffff1f;
+
+// Brand Typefaces
+
+$primary-font: 'Ubuntu', sans-serif;
+$secondary-font: 'Montserrat', sans-serif;
+
+// Screen Sizes
+$screen-sm: 576px;
+$screen-md: 768px;
+$screen-lg: 992px;
+$screen-xl: 1200px;
+
+// Heading sizes - Desktop
+
+$h1-size: 92px;
+$h2-size: 40px;
+$h3-size: 24px;
+$h4-size: 21px;
+$h5-size: 18px;
+$h6-size: 16px;
+$p-size: 15px;
+
+// Z-Indexes  Specificity
+
+$z-layers: (
+	'super': 999999,
+	'cursor': 10000,
+	'modal': 9000,
+	'on-header': 2000,
+	'site-header': 1000,
+	'site-content': 100,
+	'site-footer': 1000,
+	'site-background': -10,
+);
